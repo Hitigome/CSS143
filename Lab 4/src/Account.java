@@ -38,7 +38,7 @@ class Account
 
 	/* Returns the balance of the Account
 	 */
-	public int getBalance()
+	public double getBalance()
 	{
 		return balance;
 	}
