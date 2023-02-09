@@ -3,17 +3,15 @@
  *
  * This Account class represents bank accounts that stores money for an owner.
  *
- * Author: (put your name here)
+ * Author: Brian
  */
-class Account
-{
+class Account{
 // Instance variables
 	private double balance;	// invariant: balance >= 0 (should never be negative)
 	private String owner;
 
 //Constructor
-	public Account(String name)
-	{
+	public Account(String name){
 		balance = 0;
 		owner = name;
 	}
@@ -21,8 +19,7 @@ class Account
 // Instance methods
 	/** Deposits 'amount' into the account
 	 */
-	public void deposit(int amount)
-	{
+	public void deposit(int amount){
 		balance = balance + amount;
 	}
 
@@ -31,22 +28,19 @@ class Account
 	 *	This method should be re-written so that there is not a possibility of
 	 *	having a negative balance.
 	 */
-	public void withdraw(int amount)
-	{
+	public void withdraw(int amount){
 		balance = balance - amount;
 	}
 
 	/* Returns the balance of the Account
 	 */
-	public double getBalance()
-	{
+	public double getBalance(){
 		return balance;
 	}
 
 	/* Returns the owner of the Account
 	 */
-	public String getOwner()
-	{
+	public String getOwner(){
 		return owner;
 	}
 }
