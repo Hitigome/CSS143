@@ -15,7 +15,7 @@ public class SimpleColor {
 		if(r>0 && r<255){
 			this.r = r;
 		}else{
-			throw new ColorException("A test in main");
+			throw new ColorException();
 		}
 	}
 
@@ -27,7 +27,7 @@ public class SimpleColor {
 		if(g>0 && g<255){
 			this.g = g;
 		}else{
-			throw new ColorException("A test in main");
+			throw new ColorException();
 		}
 	}
 
@@ -39,7 +39,7 @@ public class SimpleColor {
 		if(b>0 && b<255){
 			this.b = b;
 		}else{
-			throw new ColorException("A test in main");
+			throw new ColorException();
 		}
 	}
 
