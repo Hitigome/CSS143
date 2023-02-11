@@ -13,4 +13,17 @@ public class ColorWithAlpha extends SimpleColor{
         }
     }
     
+    ColorWithAlpha(int alpha){
+        super.setR(0);
+        super.setB(0);
+        super.setG(0);
+    }
+
+    ColorWithAlpha(int r, int g, int b, int alpha){
+        super(r,g,b);
+    }
+
+    ColorWithAlpha(ColorWithAlpha colorWithAlpha){
+
+    }
 }
