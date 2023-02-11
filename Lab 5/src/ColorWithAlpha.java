@@ -24,6 +24,6 @@ public class ColorWithAlpha extends SimpleColor{
     }
 
     ColorWithAlpha(ColorWithAlpha colorWithAlpha){
-
+        
     }
 }
