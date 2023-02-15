@@ -18,6 +18,7 @@ public class EmployeeDriver {
 		//then a salaried worker
 		SalariedWorker emp4 = new SalariedWorker( "Jane", 222222222, 5000);
 		HourlyWorker emp5 = new HourlyWorker( "Joe", 11111111,20);
+		PermanentHire emp6 = new PermanentHire("Bob", 123121234, 2000);
 		
 		//todo: Build some PermanentHire and Consultant objects here
 		//and add them to the ArrayList below
@@ -30,6 +31,7 @@ public class EmployeeDriver {
 		myEmployees.add(emp3);
 		myEmployees.add(emp4);
 		myEmployees.add(emp5);
+		myEmployees.add(emp6);
 		//todo: add a sixth and seventh employee to this list that you create
 		
 		
