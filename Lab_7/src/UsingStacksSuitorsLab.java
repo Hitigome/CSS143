@@ -86,7 +86,20 @@ public class UsingStacksSuitorsLab implements Runnable {
 	}
 	
 	public static boolean isPalindrome(String input) {
-		//todo: use a stack
+		Stack<Character> a = new Stack<Character>();
+
+		for(int i=0; i < input.length(); i++){
+			char current = input.charAt(i);
+			a.push(current);
+		}
+
+		String reversed = "";
+		while(!a.isEmpty()){
+			int current = a.pop();
+			reversed += current;
+		}
+
+		return input.equals(reversed);
 	}
 
 	public static boolean isPalindromeRec(String sentence)	{
