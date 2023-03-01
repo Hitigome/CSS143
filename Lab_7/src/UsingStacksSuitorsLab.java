@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /* CSSSKL 162
  * 
@@ -57,10 +58,26 @@ public class UsingStacksSuitorsLab implements Runnable {
 	
 	public static void printReverse(String target) {
 		//todo: use a stack
+		Stack<Integer> a = new Stack<Integer>();
+		String input = target;
+
+		for (int i = 0; i<input.length(); i++){
+			char currentChar = input.charAt(i);
+			a.push((int) currentChar);
+		}
+
+		while(!a.isEmpty()){
+			int current = a.pop();
+			char currentChar = (char) current;
+			System.out.println(currentChar);
+		}
 	}
 	
 	public static void recPrintReverse(String target) {
-		//todo
+		String input = target;
+		if(input.length() == 1){
+
+		}
 	}
 	
 	public static boolean isPalindrome(String input) {
