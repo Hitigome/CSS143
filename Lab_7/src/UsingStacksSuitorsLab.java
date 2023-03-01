@@ -76,6 +76,8 @@ public class UsingStacksSuitorsLab implements Runnable {
 	public static void recPrintReverse(String target) {
 		String input = target;
 		if(input.length() == 1){
+			System.out.println(target);
+		}else{
 
 		}
 	}
