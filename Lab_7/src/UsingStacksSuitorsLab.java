@@ -103,7 +103,13 @@ public class UsingStacksSuitorsLab implements Runnable {
 	}
 
 	public static boolean isPalindromeRec(String sentence)	{
-	  	//todo
+	  	if(sentence.length() < 2){
+			System.out.println(sentence);
+		}else{
+			if(sentence.charAt(sentence.length()-1) == sentence.charAt(0)){
+				isPalindromeRec(sentence);	
+			}
+		}
 	}
 	
 	public static int findPlaceToStand(int numSuitors) {
