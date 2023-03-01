@@ -28,7 +28,7 @@ public class UsingStacksSuitorsLab implements Runnable {
 		System.out.println("String1 is \"" + s1 + "\"");
 		System.out.println("String2 is \"" + s2 + "\"");
 		
-	/*	System.out.println(s1 + " reversed is: ");
+		System.out.println(s1 + " reversed is: ");
 		printReverse(s1);
 		System.out.println(s2 + " reversed is: ");
 		printReverse(s2);
@@ -50,7 +50,7 @@ public class UsingStacksSuitorsLab implements Runnable {
 		System.out.println("For " + n + " suitors, stand in place:" + findPlaceToStand(n));
 		
 		n = 10;
-		System.out.println("For " + n + " suitors, stand in place:" + findPlaceToStand(n));*/
+		System.out.println("For " + n + " suitors, stand in place:" + findPlaceToStand(n));
 	}
 		
 	
@@ -74,11 +74,14 @@ public class UsingStacksSuitorsLab implements Runnable {
 	}
 	
 	public static void recPrintReverse(String target) {
-		String input = target;
-		if(input.length() == 1){
+
+		if(target.length() == 1){
 			System.out.println(target);
 		}else{
-
+			char last = target.charAt(target.length() - 1);
+			String newTarget = target.substring(0, target.length() - 1);
+			recPrintReverse(newTarget);
+			System.out.println(last);
 		}
 	}
 	
