@@ -43,14 +43,12 @@ public class UsingStacksSuitorsLab implements Runnable {
 		
 		System.out.println(s1 + " is a palindrome(recursively): " + isPalindromeRec(s1));
 		System.out.println(s2 + " is a palindrome(recursively): " + isPalindromeRec(s2));	
-		
-		System.out.println("Did we build a Queue of Threads and start them? " + buildThreadQueue());
-		
+	
 		int n = 6;
 		System.out.println("For " + n + " suitors, stand in place:" + findPlaceToStand(n));
 		
 		n = 10;
-		System.out.println("For " + n + " suitors, stand in place:" + findPlaceToStand(n));
+		System.out.println("For " + n + " suitors, stand in place:" + findPlaceToStand(n)); 
 	}
 		
 	
@@ -103,45 +101,73 @@ public class UsingStacksSuitorsLab implements Runnable {
 	}
 
 	public static boolean isPalindromeRec(String sentence)	{
+
 	  	if(sentence.length() < 2){
-			System.out.println(sentence);
-		}else{
-			if(sentence.charAt(sentence.length()-1) == sentence.charAt(0)){
-				isPalindromeRec(sentence);	
-			}
+			return true;
+		}else if (sentence.charAt(0) != sentence.charAt(sentence.length() - 1)) {
+			return false;
 		}
+		String substring = sentence.substring(1, sentence.length() - 1);
+		return isPalindromeRec(substring);
 	}
 	
 	public static int findPlaceToStand(int numSuitors) {
-		//todo
-		return -1;
+		Queue<Integer> q = new LinkedList<Integer>();
+		for (int i = 1; i <= numSuitors; i++){
+			q.add(i);
+		}
+
+		while (q.size() > 1){
+			int first = q.poll();
+			q.add(first);
+
+			int second = q.poll();
+			q.add(second);
+
+			int third = q.poll();
+		}
+
+		return q.poll();
 	}	
 
+	public static int findPlaceToStack(int numSuitors){
+		Stack<Integer> left = new Stack<Integer>();
+		Stack<Integer> right = new Stack<Integer>();
 
-	public static boolean buildThreadQueue() {	//returns true upon success
-		Queue<Thread> q = new LinkedList<Thread>(); 
+		for (int i=1; i<=n; i++){
+			if (i % 2 == 1){
+				left.push(i);
+			}else{
+				right.push(i);
+			}
+		}
 		
-		//when our program starts up, it might create multiple threads to use
-		q.enqueue( new Thread(new UsingStacksSuitorsLab()));
-		q.enqueue( new Thread(new UsingStacksSuitorsLab()));
-		q.enqueue( new Thread(new UsingStacksSuitorsLab()));
+		boolean forward = true;
+		while(left.size() + right.size() > 1){
+			int suitor;
+			if(forward){
+				suitor = left.pop();
+				if(!left.empty()){
+					left.push(right.pop());
+				}
+			}else{
+				suitor = right.pop();
+				if(!right.empty()){
+					right.push(left.pop());
+				}
+			}
+			forward = !forward;
+		}
+
+		if(!left.empty()){
+			return left.pop();
+		}else{
+			return right.pop();
+		}
 		
-		System.out.println("Initial Thread order:");
-		q.toString();  
-		
-		//We need to iterate over our pool of threads and call start() on each one
-		//Make a loop that dequeues a thread, calls start on it, and //enqueues it again
-		//to do:
-		//current = get a thread
-		//current.start();
-		//put the thread back
-		
-		System.out.println("Thread order after start()ing:");
-		q.toString();  
-		
-		return true;  //on successful start
 	}
-	
+
+
 	
 	/*
 	 * No need to edit anything below here, 
